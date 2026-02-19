@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sher Ali's Logic Terminal</title>
+    <title>Sher Ali's System Log</title>
     <style>
         :root {
             --bg: #0d1117;
@@ -61,11 +61,10 @@
             font-weight: bold;
             transition: 0.3s;
         }
-        button:hover { background: var(--pink); color: white; transform: scale(1.05); box-shadow: 0 0 15px var(--pink); }
+        button:hover { background: var(--pink); color: white; transform: scale(1.05); }
 
         #pet { position: absolute; font-size: 30px; pointer-events: none; z-index: 100; transition: 0.05s; }
-        .final-message { text-align: center; }
-        .final-message h2 { color: var(--pink); }
+        #noBtn { transition: 0.2s; position: relative; }
     </style>
 </head>
 <body>
@@ -73,76 +72,102 @@
     <div id="pet">🐱</div>
 
     <div class="container">
-        <h1>Sher_Ali_OS [Last Semester Edition]</h1>
+        <h1>Sher_Ali_OS [Apology Console]</h1>
 
         <div id="step1" class="step active">
-            <p class="question">Q1: Was I jealous when I said those things? 😤</p>
+            <p class="question">Did I say some rude stuff to you? ☹️</p>
             <div class="btn-group">
-                <button onclick="nextStep(1, 'yes', 'You know me, I get jealous quickly. My internal server overheats!')">Yes</button>
-                <button onclick="nextStep(1, 'no', 'You are wrong! I get jealous if you even look at other men. My security protocols are tight!')">No</button>
+                <button onclick="nextStep(1, 'yes', 'Yes, I know I did and I feel terrible.')">Yes</button>
+                <button onclick="nextStep(1, 'no', 'Even if you say no, I know I was out of line.')">No</button>
             </div>
         </div>
 
         <div id="step2" class="step">
             <div id="res1" class="response-box"></div>
-            <p class="question">Q2: Am I stupid? 🤡</p>
+            <p class="question">Did I mean it? 🤔</p>
             <div class="btn-group">
-                <button onclick="nextStep(2, 'yes', 'Yes, I am stupid for you, and especially stupid for saying those things.')">Yes</button>
-                <button onclick="nextStep(2, 'no', 'I am stupid and you know it! Don\'t try to defend my buggy brain.')">No</button>
+                <button onclick="nextStep(2, 'yes', 'You know me Kishu, I didn\'t mean it. My heart would never want to hurt you.')">Yes</button>
+                <button onclick="nextStep(2, 'no', 'You know me Kishu, that\'s correct! I don\'t mean it at all.')">No</button>
             </div>
         </div>
 
         <div id="step3" class="step">
             <div id="res2" class="response-box"></div>
-            <p class="question">Q3: Do I actually like you? 💖</p>
+            <p class="question">Was I in my right mind when I said it? 😵‍💫</p>
             <div class="btn-group">
-                <button onclick="nextStep(3, 'yes', 'Hurray! I like you and you know it. That\'s why I\'m so sorry.')">Yes</button>
-                <button onclick="nextStep(3, 'no', 'You are wrong! I like you very, very much. More than my favorite code.')">No</button>
+                <button onclick="nextStep(3, 'yes', 'If I was in my right mind, why would I say that? I only say nice things when I\'m thinking straight!')">Yes</button>
+                <button onclick="nextStep(3, 'no', 'Then you know it was a genuine mistake and I am so sorry.')">No</button>
             </div>
         </div>
 
         <div id="step4" class="step">
             <div id="res3" class="response-box"></div>
-            <p class="question">Q4: Do I like when you give me work to do? 📝</p>
+            <p class="question">Was I jealous when I said it? 😤</p>
             <div class="btn-group">
-                <button onclick="nextStep(4, 'yes', 'Yes! I love it because you come to me and sit with me. That\'s the best part.')">Yes</button>
-                <button onclick="nextStep(4, 'no', 'You are wrong! I like it because it means you come and sit with me.')">No</button>
+                <button onclick="nextStep(4, 'yes', 'You know I get jealous quickly! My system overheats.')">Yes</button>
+                <button onclick="nextStep(4, 'no', 'You are wrong! I get jealous if you even look at other men.')">No</button>
             </div>
         </div>
 
         <div id="step5" class="step">
             <div id="res4" class="response-box"></div>
-            <p class="question">Q5: Do I like when you sit with me or chat with me? ☕</p>
+            <p class="question">Am I stupid? 🤡</p>
             <div class="btn-group">
-                <button onclick="nextStep(5, 'yes', 'I do love it when you sit with me and talk with me. It\'s my favorite activity.')">Yes</button>
-                <button onclick="nextStep(5, 'no', 'You are wrong! Talking to you is the highlight of my day.')">No</button>
+                <button onclick="nextStep(5, 'yes', 'Yes I am for you, and I am stupid for saying those stuff.')">Yes</button>
+                <button onclick="nextStep(5, 'no', 'I am stupid and you know it!')">No</button>
             </div>
         </div>
 
         <div id="step6" class="step">
             <div id="res5" class="response-box"></div>
-            <p class="question">Q6: Do I want Kishu in my life? 💍</p>
+            <p class="question">Do I like you? ❤️</p>
             <div class="btn-group">
-                <button onclick="nextStep(6, 'yes', 'Yes, I really really do! You are the reason I love this degree—because it led me to you.')">Yes</button>
-                <button onclick="nextStep(6, 'no', 'You are wrong! I want you in my life. I only love this degree because it\'s the reason I met you.')">No</button>
+                <button onclick="nextStep(6, 'yes', 'Hurray! I like you and you know it, so I am sorry.')">Yes</button>
+                <button onclick="nextStep(6, 'no', 'You are wrong! I like you very much.')">No</button>
             </div>
         </div>
 
         <div id="step7" class="step">
             <div id="res6" class="response-box"></div>
-            <p class="question">Final Question: Do you forgive me? 🥺</p>
+            <p class="question">Do I like when you give me work to do? 📝</p>
             <div class="btn-group">
-                <button onclick="nextStep(7, 'yes', 'Thank you Kishu! I won\'t do it again, I promise. Redownloading Love.exe...')">Yes</button>
-                <button id="noBtn" onmouseover="moveNo()" onclick="nextStep(7, 'no', 'Why am I not cute enough? Pretty plz click Yes like you mean it!')">No</button>
+                <button onclick="nextStep(7, 'yes', 'Yes I do like it because you come to me and sit with me, that\'s why!')">Yes</button>
+                <button onclick="nextStep(7, 'no', 'You are wrong! I like it because you come and sit with me, so I like it.')">No</button>
             </div>
         </div>
 
-        <div id="final" class="step final-message">
+        <div id="step8" class="step">
             <div id="res7" class="response-box"></div>
-            <h2>Success! Patch Applied ❤️</h2>
+            <p class="question">Do I like when you sit with me or chat with me? ☕</p>
+            <div class="btn-group">
+                <button onclick="nextStep(8, 'yes', 'I do love it when you sit with me and talk with me.')">Yes</button>
+                <button onclick="nextStep(8, 'no', 'You are wrong! I love every second of it.')">No</button>
+            </div>
+        </div>
+
+        <div id="step9" class="step">
+            <div id="res8" class="response-box"></div>
+            <p class="question">Do I want Kishu in my life? 💍</p>
+            <div class="btn-group">
+                <button onclick="nextStep(9, 'yes', 'Yes I really really do! I love this degree because of you, because this is the reason I met you.')">Yes</button>
+                <button onclick="nextStep(9, 'no', 'You are wrong! I want you in my life. I love this degree because of you, it\'s how I found you.')">No</button>
+            </div>
+        </div>
+
+        <div id="step10" class="step">
+            <div id="res9" class="response-box"></div>
+            <p class="question">Do you forgive me? 🥺</p>
+            <div class="btn-group">
+                <button onclick="nextStep(10, 'yes', 'Thank you Kishu, I won\'t do it again I promise!')">Yes</button>
+                <button id="noBtn" onmouseover="moveNo()">No</button>
+            </div>
+        </div>
+
+        <div id="final" class="step" style="text-align: center;">
+            <div id="res10" class="response-box" style="text-align: left;"></div>
+            <h2 style="color: var(--pink);">Final Patch Successful!</h2>
             <p>Thanks for forgiving this stupid <b>Sher Ali</b>.</p>
-            <p>I hope to spend this last semester happily with you, and I would love to have you by my side long after graduation.</p>
-            <p style="font-size: 0.8rem; color: var(--pink);">[ System Status: Forever with Kishu ]</p>
+            <p>I hope to spend this last semester happily with you and I would love to have you after the graduation. 🎓❤️</p>
         </div>
     </div>
 
@@ -168,17 +193,22 @@
             document.getElementById('res' + current).innerText = "> " + message;
             document.getElementById('step' + current).classList.remove('active');
             
-            let next = (current === 7) ? 'final' : 'step' + (current + 1);
+            let next = (current === 10) ? 'final' : 'step' + (current + 1);
             document.getElementById(next).classList.add('active');
         }
 
-        // Make the "No" button move so she has to click yes (optional fun)
         function moveNo() {
             const btn = document.getElementById('noBtn');
-            // Only moves a little bit to be annoying but clickable if she's fast
+            const container = document.querySelector('.container');
+            const rect = container.getBoundingClientRect();
+            
+            // Just some text change to tease her
+            btn.innerText = "Why? 🥺";
+            
+            // Simple random movement within the card
             btn.style.position = 'absolute';
-            btn.style.left = Math.random() * 200 + 'px';
-            btn.style.top = Math.random() * 100 + 'px';
+            btn.style.left = Math.random() * (rect.width - 100) + 'px';
+            btn.style.top = Math.random() * (rect.height - 100) + 'px';
         }
     </script>
 </body>
